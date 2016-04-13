@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html" charset="UTF-8" />
+		<meta name="author" content="zenggo" />
+		<title>赛客球衣订单信息录入</title>
+		<link rel="stylesheet" type="text/css" href="style.css" />
+	</head>
+	<body>
+		<div class="content-wrap">
+			<form name="main" action="">
+				<!--  -->
+				<div class="top-content border-style">
+					<span class="top-title">Cikers-球衣订单</span><hr />
+					<div>
+						队名：<input type="text" name="team-name" class="input-style"/>
+						球队联系人：<input type="text" name="team-man" class="input-style"/>
+						联系方式：<input type="text" name="team-phone" class="input-style"/>
+					</div>
+				</div>
+				<!--统一内容  -->
+				<div class="unified-content border-style" id="unified-div">
+					<div class="content-title"><span>统一内容：</span><hr /></div>
+					<div class="unified-content-first-row">
+						<div class="unified-content-col">
+							<!--队徽图案信息  -->
+							<div class="unified-content-block border-style-2">
+								<table>
+									<tr><td class="first-td">队徽：</td><td><input class="input-style" id="img-file" type="file" name="logo" /><button class="input-style" id="upload-file">上传图片</button></td></tr>
+									<tr><td class="first-td">材质：</td><td><label for="jiaoyin">胶印</label><input id="jiaoyin" type="radio" name="logo-material" value="jiaoyin" checked="checked" /> <label for="butie">布贴</label><input id="butie" type="radio" name="logo-material" value="butie" /> <label for="cixiu">刺绣<input id="cixiu" type="radio" name="logo-material" value="cixiu" /></td></tr>
+									<tr><td class="first-td">预览：</td><td><div class="upload-image" ><div  id="logo-preview"><img src="img/notice.gif" id="logo-preview-img" /></div></div></td></tr>
+								</table>
+								
+							</div>
+							<!--胸前广告信息  -->
+							<div class="unified-content-block border-style-2">
+								<table>
+									<tr><td class="first-td">广告：</td><td><input id="ad-content" class="input-style" type="text" name="ad-content"/></td></tr>
+									<tr><td class="first-td">字体：</td><td><select id="ad-font" name="ad-font" class="input-style input-font-width">
+												<option value="1" title="微软雅黑">一号字体</option>
+												<option value="2" title="华文行楷">二号字体</option>
+												<option value="3" title="华文琥珀">三号字体</option>
+											</select></td></tr>
+									<tr><td class="first-td">颜色：</td><td><select id="ad-color" name="ad-color" class="input-style">
+												<option value="1" title="#000">black</option>
+												<option value="2" title="#ee6666">red</option>
+												<option value="3" title="#6666ee">blue</option>
+												<option value="4" title="#66ee66">green</option>
+											</select></td></tr>
+									<tr><td class="first-td">字体大小：</td>
+											<td><input type="number" id="ad-size" name="ad-size" class="input-style input-number-style" disabled="disabled"/> 
+												<a class="adsub-button" title="sub" href="#" >▼</a>|<a  href="#"  class="adsub-button" title="add">▲</a></td></tr>
+								</table>
+							</div>
+						</div>
+						<!--胸前预览 -->
+						<div class="unified-content-col">
+							<div class="show-wrap border-style-2" id="show-front">
+								<div id="show-logo"></div>
+								<div id="show-ad"><span></span></div>
+							</div>
+						</div>
+						<!-- back -->
+						<div class="unified-content-col">
+							<!--后背印字  -->
+							<div class="unified-content-block border-style-2">
+								<table>
+									<tr><td class="first-td">后背内容：</td><td></td></tr>
+									<tr><td class="first-td">印字字体：</td><td><select id="yinzi-font" name="yinzi-font" class="input-style input-font-width">
+												<option value="1" title="微软雅黑">一号字体</option>
+												<option value="2" title="华文行楷">二号字体</option>
+												<option value="3" title="华文琥珀">三号字体</option>
+										</select></td></tr>
+									<tr><td class="first-td">颜色：</td><td><select id="yinzi-color" name="yinzi-color" class="input-style">
+												<option value="1" title="#000">black</option>
+												<option value="2" title="#ee6666">red</option>
+												<option value="3" title="#6666ee">blue</option>
+												<option value="4" title="#66ee66">green</option>
+										</select></td></tr>
+									<tr><td class="first-td">字体大小：</td>
+											<td><input type="number" id="yinzi-size" name="yinzi-size" class="input-style input-number-style" disabled="disabled"/> 
+												<a class="adsub-button" title="sub" href="#" >▼</a>|<a  href="#"  class="adsub-button" title="add">▲</a></td></tr>
+									<!-- <tr><td class="first-td">位置：</td><td>字在号上<input type="radio" name="yinzi-position" value="up" checked="checked"/> 号在字上<input type="radio" name="yinzi-position" value="down"/></td></tr> -->
+									<tr><td class="first-td">预览内容：</td><td><input class="input-style" type="text" id="yinzi-show-content" name="yinzi-show-content" value="CIKERS"/></td></tr>
+								</table>
+							</div>
+							<!--后背印号  -->
+							<div class="unified-content-block border-style-2">
+								<table>
+									<tr><td class="first-td">印号字体：</td><td><select id="yinhao-font" name="yinhao-font" class="input-style input-font-width">
+											<option value="1" title="微软雅黑">一号字体</option>
+											<option value="2" title="华文行楷">二号字体</option>
+											<option value="3" title="华文琥珀">三号字体</option>
+										</select></td></tr>
+									<tr><td class="first-td">颜色：</td><td><select class="input-style" id="yinhao-color" name="yinhao-color">
+											<option value="1" title="#000">black</option>
+											<option value="2" title="#ee6666">red</option>
+											<option value="3" title="#6666ee">blue</option>
+											<option value="4" title="#66ee66">green</option>
+										</select></td></tr>
+									<tr><td class="first-td">字体大小：</td>
+											<td><input type="number" value="1" id="yinhao-size" name="yinhao-size" class="input-style input-number-style" disabled="disabled"/> 
+												<a class="adsub-button" href="#" title="sub">▼</a>|<a  href="#"  class="adsub-button" title="add">▲</a></td></tr>
+									<tr><td class="first-td">预览内容：</td><td><input type="number" class="input-style input-number-style" id="yinhao-show-content" value="10"/></td></tr>
+								</table>
+							</div>
+						</div>
+						<div class="unified-content-col">
+							<!--背后预览 -->
+							<div class="show-wrap border-style-2" id="show-back">
+								<div id="show-yinzi"><span></span></div>
+								<div id="show-yinhao"><span></span></div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!--个性化内容  -->
+				<div class="custom-content border-style">
+					<div class="content-title"><span class="content-title">个人内容（五套起订）：</span><hr /></div>
+					<div class="content-table">
+						<table id="custom-table">
+							<tr class="first-tr">
+								<td></td><td>编号</td><td>姓名</td><td>尺码</td><td>球裤</td><td>号码</td><td>后背印字</td><td>款式</td><td>备注</td><td></td>
+							</tr>
+							<tr>
+								<td><button class="delete-row">删除</button></td>
+								<td>1</td>
+								<td id="123"><input type="text" class="input-style"/></td>
+								<td><select class="input-style"><option value="s">S</option><option value="m">M</option><option value="l">L</option><option value="xl">XL</option></select></td>
+								<td><input type="checkbox" checked="checked"/></td>
+								<td><input type="text" class="input-style"/></td>
+								<td><input type="text" class="input-style"/></td>
+								<td><select class="input-style">
+										<option value="longmai">龙脉</option>
+										<option value="baihu">白虎</option>
+										<option value="qinglong">青龙</option>
+									</select></td>
+								<td><input type="text" class="input-style" /></td>
+								<td><button class="delete-row">删除</button></td>
+							</tr>
+						</table>
+						<div class="add-table-bar">
+							<button id="add-row">添加行</button>
+						</div>
+					</div>
+					
+				</div>
+				
+				<!-- <div class="bottom-content">
+					合计
+					<div class="bottom-content-left">
+						<table>
+							<tr>
+								<td>尺码</td><td>上衣</td><td>裤子</td>
+							</tr>
+							<tr>
+								<td>S</td><td></td><td></td>
+							</tr>
+							<tr>
+								<td>M</td><td></td><td></td>
+							</tr>
+							<tr>
+								<td>L</td><td></td><td></td>
+							</tr>
+							<tr>
+								<td>XL</td><td></td><td></td>
+							</tr>
+						</table>
+					</div>
+					提交
+					<div class="bottom-content-right">
+						跟单人：<input type="text" name="salesman" class="input-style"/>
+						<input type="submit" />
+					</div>
+				</div> -->
+			</form>
+		</div>
+	</body>
+	<script type="text/javascript" src="jquery-1.12.2.min.js"></script>
+	<script type="text/javascript" src="op.js"></script>
+</html>
